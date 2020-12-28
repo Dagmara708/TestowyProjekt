@@ -1,0 +1,26 @@
+﻿@model List<TestProject.Models.Example>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Przykładowa strona</h2>
+
+<div>
+    <p>Przykładowe dane</p>
+    
+    @foreach (var item in Model)
+    {
+        <div>
+            <p>ID: @item.Id</p>
+            <p>Imie: @item.Name</p>
+            <p>Nazwisko: @item.Surname</p>
+
+            <p>@Html.ActionLink("Edytuj", "Edit","Example", new { @item.Id}, null)</p>
+            <p>@Html.ActionLink("Usuń", "Delete","Example", new { @item.Id}, null)</p>
+        </div>
+    }
+
+    <hr/>
+
+    <p>@Html.ActionLink("Dodaj element do bazy", "Add", "Example")</p>
+</div>
