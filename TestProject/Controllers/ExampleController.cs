@@ -40,7 +40,7 @@ namespace TestProject.Controllers
 
         public ActionResult Edit(int Id)
         {
-            Example model = db.Examples.Where(x => x.Id == Id).FirstOrDefault();
+            Example model = db.Examples.Where(x => x.Id_pacjenta == Id).FirstOrDefault();
 
             return View(model);
         }
@@ -48,7 +48,7 @@ namespace TestProject.Controllers
         [HttpPost]
         public ActionResult Edit(Example model)
         {
-            Example old = db.Examples.Single(x => x.Id == model.Id);
+            Example old = db.Examples.Single(x => x.Id_pacjenta == model.Id_pacjenta);
             db.Entry(old).State = System.Data.Entity.EntityState.Modified;
             old.Name = model.Name;
             old.Surname = model.Surname;
@@ -59,7 +59,7 @@ namespace TestProject.Controllers
 
         public ActionResult Delete(int Id)
         {
-            Example old = db.Examples.Single(x => x.Id == Id);
+            Example old = db.Examples.Single(x => x.Id_pacjenta == Id);
             db.Examples.Remove(old);
             db.SaveChanges();
 

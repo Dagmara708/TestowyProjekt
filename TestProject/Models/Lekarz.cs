@@ -6,19 +6,16 @@ using System.Web;
 
 namespace TestProject.Models
 {
-    public class Example
+    public class Lekarz
     {
-        public int Id_pacjenta { get; set; }
+        public int Id_Lekarza { get; set; }
+        [DisplayName("Imię lekarza")]
 
-        [DisplayName("Imię pacjenta")]
-        public string Name { get; set; }
+        public string Imię_lekarza { get; set; }
         [DisplayName("Nazwisko pacjenta")]
-        public string Surname { get; set; }
+        public string Nazwisko_lekarza { get; set; }
 
-        public string Pesel { get; set; }
-
+        public string PESEL_lekarza { get; set; }
         public virtual List<Karta_goraczkowa> Karty_goraczkowe { get; set; }
-        
-
     }
 }
