@@ -15,9 +15,10 @@ namespace TestProject.Models
         [DisplayName("Imię lekarza")]
         public string Doctor_name { get; set; }
 
-        [DisplayName("Nazwisko pacjenta")]
+        [DisplayName("Nazwisko lekarza")]
         public string Doctor_surname { get; set; }
 
+        [DisplayName("PESEL lekarza")]
         public string Doctor_PESEL { get; set; }
 
         public virtual List<Fever_Card> Fever_Cards { get; set; }

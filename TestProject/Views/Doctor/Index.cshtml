@@ -1,7 +1,29 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@model List<TestProject.Models.Doctor>
+
+<h2>Lista lekarzy</h2>
+
+<form method="post" action="~/Doctor/Search">
+    <div>
+        <p>Wyszukaj lekarzy</p>
+        <p>@Html.TextBox("pattern")</p>
+    </div>
+    <div>
+        <input type="submit" value="Wyszukaj">
+    </div>
+</form>
+@foreach (var item in Model)
+{
+<div>
+    <p>ID: @item.Doctor_id</p>
+    <p>Imie: @item.Doctor_name</p>
+    <p>Nazwisko: @item.Doctor_surname</p>
+    <p>PESEL: @item.Doctor_PESEL</p>
+
+
+    <p>@Html.ActionLink("Edytuj lekarza", "Edit", "Doctor", new { @item.Doctor_id }, null)</p>
+    <p>@Html.ActionLink("Usuń", "Delete", "Doctor", new { @item.Doctor_id }, null)</p>
+
+
+</div>
 }
-
-<h2>Doktorzy</h2>
-
+    <p> @Html.ActionLink("Dodaj lekarza", "Add", "Doctor")</p>

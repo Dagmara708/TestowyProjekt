@@ -22,6 +22,23 @@ namespace TestProject.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public ActionResult Search(string pattern)
+        {
+            if (string.IsNullOrEmpty(pattern) || string.IsNullOrWhiteSpace(pattern))
+            {
+                return RedirectToAction("Index");
+            }
+
+            List<Patient> model = db.Patients.Where
+                (x => x.Name.ToLower().Contains(pattern.ToLower())
+                || x.Surname.ToLower().Contains(pattern.ToLower())
+                || x.PESEL.Contains(pattern))
+                .ToList();
+
+            return View("Index", model);
+        }
+
         public ActionResult Add()
         {
             return View();
