@@ -1,10 +1,9 @@
 ﻿@model TestProject.Models.Patient
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Add";
 }
 
-<h2>Edit</h2>
-
+<h2>Add</h2>
 <form method="post">
     <div>
         <p>@Html.LabelFor(m => m.Name)</p>
@@ -12,7 +11,9 @@
 
         <p>@Html.LabelFor(m => m.Surname)</p>
         <p>@Html.TextBoxFor(m => m.Surname)</p>
-        @Html.HiddenFor(m => m.Id)
+
+        <p>@Html.LabelFor(m => m.PESEL)</p>
+        <p>@Html.TextBoxFor(m => m.PESEL)</p>
 
         <input type="submit" value="Zapisz" />
     </div>

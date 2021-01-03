@@ -182,20 +182,22 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\Example.cs" />
+    <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Karta_goraczkowa.cs" />
-    <Compile Include="Models\Lekarz.cs" />
+    <Compile Include="Models\Fever_Card.cs" />
+    <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Pomiar.cs" />
+    <Compile Include="Models\Measure.cs" />
     <Compile Include="Models\Subexample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -259,6 +261,10 @@
     <Content Include="Views\Example\Index.cshtml" />
     <Content Include="Views\Example\Add.cshtml" />
     <Content Include="Views\Example\Edit.cshtml" />
+    <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Patient\Index.cshtml" />
+    <Content Include="Views\Patient\Add.cshtml" />
+    <Content Include="Views\Patient\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

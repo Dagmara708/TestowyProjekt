@@ -12,9 +12,9 @@ namespace TestProject.Models
         {
 
         }
-        public DbSet<Lekarz> Lekarze { get; set; }
-        public DbSet<Example> Examples { get; set; }
-        public DbSet<Karta_goraczkowa> Karty_gorączkowe { get; set; }
-        public DbSet<Pomiar> Pomiary { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Fever_Card> Fever_Cards { get; set; }
+        public DbSet<Measure> Measures { get; set; }
     }
 }

@@ -1,0 +1,20 @@
+﻿@model List<TestProject.Models.Patient>
+
+<h2>Lista pacjentów</h2>
+
+@foreach (var item in Model)
+{
+<div>
+    <p>ID: @item.Patient_id</p>
+    <p>Imie: @item.Name</p>
+    <p>Nazwisko: @item.Surname</p>
+    <p>PESEL: @item.PESEL</p>
+
+    <p>@Html.ActionLink("Edytuj pacjenta", "Edit", "Patient", new { @item.Patient_id }, null)</p>
+    <p>@Html.ActionLink("Usuń", "Delete", "Patient", new { @item.Patient_id }, null)</p>
+
+</div>
+
+}
+<p> @Html.ActionLink("Dodaj pacjenta", "Add", "Patient")</p>
+/**/

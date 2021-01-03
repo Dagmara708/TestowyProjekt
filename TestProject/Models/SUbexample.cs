@@ -11,6 +11,6 @@ namespace TestProject.Models
         public int ExampleId { get; set; }
         public string Name { get; set; }
 
-        public virtual Example Example { get; set; }
+        public virtual Patient Example { get; set; }
     }
 }

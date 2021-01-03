@@ -7,16 +7,14 @@ using TestProject.Models;
 
 namespace TestProject.Controllers
 {
-    public class ExampleController : Controller
+    public class PatientController : Controller
     {
         private Context db;
-
-        public ExampleController()
+        public PatientController()
         {
             db = new Context();
         }
-
-        // GET: Example
+        // GET: Patient
         public ActionResult Index()
         {
             List<Patient> model = db.Patients.ToList();
@@ -34,13 +32,12 @@ namespace TestProject.Controllers
         {
             db.Patients.Add(model);
             db.SaveChanges();
-
             return RedirectToAction("Index");
         }
 
-        public ActionResult Edit(int Id)
+        public ActionResult Edit(int Patient_id)
         {
-            Patient model = db.Patients.Where(x => x.Patient_id == Id).FirstOrDefault();
+            Patient model = db.Patients.Where(x => x.Patient_id == Patient_id).FirstOrDefault();
 
             return View(model);
         }
@@ -57,13 +54,14 @@ namespace TestProject.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Delete(int Id)
+        public ActionResult Delete(int Patient_id)
         {
-            Patient old = db.Patients.Single(x => x.Patient_id == Id);
+            Patient old = db.Patients.Single(x => x.Patient_id == Patient_id);
             db.Patients.Remove(old);
             db.SaveChanges();
 
             return RedirectToAction("Index");
         }
     }
+
 }
