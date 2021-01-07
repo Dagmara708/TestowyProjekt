@@ -26,4 +26,38 @@
 
 }
 <p> @Html.ActionLink("Dodaj pacjenta", "Add", "Patient")</p>
+
+<style>
+    td, th {
+        border: 1px solid black;
+    }
+</style>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Pesel</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <th>@item.Patient_id</th>
+                    <th>@item.Name</th>
+                    <th>@item.Surname</th>
+                    <th>@item.PESEL</th>
+                    <th>@Html.ActionLink("Edytuj pacjenta", "Edit", "Patient", new { @item.Patient_id }, null)</th>
+                    <th>@Html.ActionLink("Usuń", "Delete", "Patient", new { @item.Patient_id }, null)</th>
+                </tr>
+            </tbody>
+        }
+        </table>
+
+</div>
 /**/
