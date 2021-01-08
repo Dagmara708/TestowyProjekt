@@ -11,53 +11,42 @@
         <input type="submit" value="Wyszukaj">
     </div>
 </form>
-@foreach (var item in Model)
-{
-<div>
-    <p>ID: @item.Patient_id</p>
-    <p>Imie: @item.Name</p>
-    <p>Nazwisko: @item.Surname</p>
-    <p>PESEL: @item.PESEL</p>
 
-    <p>@Html.ActionLink("Edytuj pacjenta", "Edit", "Patient", new { @item.Patient_id }, null)</p>
-    <p>@Html.ActionLink("Usuń", "Delete", "Patient", new { @item.Patient_id }, null)</p>
-
-</div>
-
-}
 <p> @Html.ActionLink("Dodaj pacjenta", "Add", "Patient")</p>
 
 <style>
     td, th {
         border: 1px solid black;
+        
     }
 </style>
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Imię</th>
-                <th>Nazwisko</th>
-                <th>Pesel</th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        @foreach (var item in Model)
-        {
-            <tbody>
+
+    <div>
+        <table  WIDTH=100% >
+            <tdead>
                 <tr>
-                    <th>@item.Patient_id</th>
-                    <th>@item.Name</th>
-                    <th>@item.Surname</th>
-                    <th>@item.PESEL</th>
-                    <th>@Html.ActionLink("Edytuj pacjenta", "Edit", "Patient", new { @item.Patient_id }, null)</th>
-                    <th>@Html.ActionLink("Usuń", "Delete", "Patient", new { @item.Patient_id }, null)</th>
+                    <td align="center">ID</td>
+                    <td align="center">Imię</td>
+                    <td align="center">Nazwisko</td>
+                    <td align="center">PESEL</td>
+                    <td></td>
+                    <td></td>
                 </tr>
-            </tbody>
-        }
+            </tdead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td align="center">@item.Patient_id</td>
+                        <td align="center">@item.Name</td>
+                        <td align="center">@item.Surname</td>
+                        <td align="center">@item.PESEL</td>
+                        <td align="center">@Html.ActionLink("Edytuj pacjenta", "Edit", "Patient", new { @item.Patient_id }, null)</td>
+                        <td align="center">@Html.ActionLink("Usuń", "Delete", "Patient", new { @item.Patient_id }, null)</td>
+                    </tr>
+                </tbody>
+            }
         </table>
 
-</div>
-/**/
+    </div>
+    /**/

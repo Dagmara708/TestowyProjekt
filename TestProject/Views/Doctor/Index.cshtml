@@ -11,19 +11,40 @@
         <input type="submit" value="Wyszukaj">
     </div>
 </form>
-@foreach (var item in Model)
-{
+
+<p> @Html.ActionLink("Dodaj lekarza", "Add", "Doctor")</p>
+
+<style>
+    td, th {
+        border: 1px solid black;
+    }
+</style>
+
 <div>
-    <p>ID: @item.Doctor_id</p>
-    <p>Imie: @item.Doctor_name</p>
-    <p>Nazwisko: @item.Doctor_surname</p>
-    <p>PESEL: @item.Doctor_PESEL</p>
-
-
-    <p>@Html.ActionLink("Edytuj lekarza", "Edit", "Doctor", new { @item.Doctor_id }, null)</p>
-    <p>@Html.ActionLink("Usuń", "Delete", "Doctor", new { @item.Doctor_id }, null)</p>
-
+    <table WIDTH=100%>
+        <tdead>
+            <tr>
+                <td align="center">ID</td>
+                <td align="center">Imię</td>
+                <td align="center">Nazwisko</td>
+                <td align="center">PESEL</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tdead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td align="center">@item.Doctor_id</td>
+                    <td align="center">@item.Doctor_name</td>
+                    <td align="center">@item.Doctor_surname</td>
+                    <td align="center">@item.Doctor_PESEL</td>
+                    <td align="center">@Html.ActionLink("Edytuj lekarza", "Edit", "Doctor", new { @item.Doctor_id }, null)</td>
+                    <td align="center">@Html.ActionLink("Usuń", "Delete", "Doctor", new { @item.Doctor_id }, null)</td>
+                </tr>
+            </tbody>
+        }
+    </table>
 
 </div>
-}
-    <p> @Html.ActionLink("Dodaj lekarza", "Add", "Doctor")</p>
