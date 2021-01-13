@@ -14,7 +14,7 @@ namespace TestProject.Models
         }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Patient> Patients { get; set; }
-        public DbSet<Fever_Card> Fever_Cards { get; set; }
+        public DbSet<FeverCard> FeverCards { get; set; }
         public DbSet<Measure> Measures { get; set; }
     }
 }

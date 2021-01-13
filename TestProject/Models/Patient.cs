@@ -20,7 +20,7 @@ namespace TestProject.Models
 
         public string PESEL { get; set; }
 
-        public virtual List<Fever_Card> Fever_Cards { get; set; }
+        public virtual List<FeverCard> FeverCards { get; set; }
         
 
     }

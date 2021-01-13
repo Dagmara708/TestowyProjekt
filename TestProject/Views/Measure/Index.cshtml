@@ -1,0 +1,30 @@
+﻿@model List<TestProject.Models.Measure>
+
+
+<h2>Lista pomiarów</h2>
+
+
+<style>
+    td, th {
+        border: 1px solid black;
+    }
+</style>
+
+<div>
+    <table WIDTH=100%>
+        <tr>
+            <td align="center" style="font-weight: bold">Karta id</td>
+            <td align="center" style="font-weight: bold">Temperatura</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td align="center">@item.Card_id</td>
+                    <td align="center">@item.Temperature</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+
+</div>

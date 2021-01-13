@@ -184,17 +184,19 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
+    <Compile Include="Controllers\FeverCardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MeasureController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\FeverCard.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Fever_Card.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Measure.cs" />
@@ -267,6 +269,8 @@
     <Content Include="Views\Patient\Edit.cshtml" />
     <Content Include="Views\Doctor\Add.cshtml" />
     <Content Include="Views\Doctor\Edit.cshtml" />
+    <Content Include="Views\Measure\Index.cshtml" />
+    <Content Include="Views\FeverCard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

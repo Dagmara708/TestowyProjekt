@@ -1,0 +1,29 @@
+﻿@model List<TestProject.Models.FeverCard>
+
+
+<h2>Lista kart gorączkowych</h2>
+
+<style>
+    td, th {
+        border: 1px solid black;
+    }
+</style>
+
+<div>
+    <table WIDTH=100%>
+        <tr>
+            <td align="center" style="font-weight: bold">Patient_ID</td>
+            <td align="center" style="font-weight: bold">Szpital</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td align="center">@item.Patient_id</td>
+                    <td align="center">@item.Hospital</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+
+</div>

@@ -24,7 +24,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
                     <li>@Html.ActionLink("Lista pacjentów", "Index", "Patient")</li>
-                    <li>@Html.ActionLink("Dane lekarzy","Index","Doctor")</li>
+                    <li>@Html.ActionLink("Dane lekarzy", "Index", "Doctor")</li>
+                    <li>@Html.ActionLink("Karty gorączkowe", "Index", "FeverCard")</li>
+                    <li>@Html.ActionLink("Pomiary", "Index", "Measure")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

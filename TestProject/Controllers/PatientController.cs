@@ -18,7 +18,6 @@ namespace TestProject.Controllers
         public ActionResult Index()
         {
             List<Patient> model = db.Patients.ToList();
-
             return View(model);
         }
 
