@@ -3,6 +3,7 @@
 
 <h2>Lista pomiarów</h2>
 
+<p> @Html.ActionLink("Dodaj pomiar", "Add", "Measure")</p>
 
 <style>
     td, th {
@@ -13,15 +14,33 @@
 <div>
     <table WIDTH=100%>
         <tr>
-            <td align="center" style="font-weight: bold">Karta id</td>
+            <td align="center" style="font-weight: bold">Id karty</td>
+            <td align="center" style="font-weight: bold">Dzień pobytu</td>
+            <td align="center" style="font-weight: bold">Pora dnia</td>
             <td align="center" style="font-weight: bold">Temperatura</td>
+            <td align="center" style="font-weight: bold">Tętno</td>
+            <td align="center" style="font-weight: bold">Stolec</td>
+            <td align="center" style="font-weight: bold">Dieta</td>
+            <td align="center" style="font-weight: bold">Zalecenia lekarskie</td>
+            <td align="center" style="font-weight: bold">Inne</td>
+            <td></td>
+            <td></td>
         </tr>
         @foreach (var item in Model)
         {
             <tbody>
                 <tr>
                     <td align="center">@item.Card_id</td>
+                    <td align="center">@item.Day_of_stay</td>
+                    <td align="center">@item.Time_of_day</td>
                     <td align="center">@item.Temperature</td>
+                    <td align="center">@item.Pulse</td>
+                    <td align="center">@item.Stool</td>
+                    <td align="center">@item.Diet</td>
+                    <td align="center">@item.Doctors_rec</td>
+                    <td align="center">@item.Others</td>
+                    <td align="center">@Html.ActionLink("Edytuj lekarza", "Edit", "Measure", new { @item.Measure_id }, null)</td>
+                    <td align="center">@Html.ActionLink("Usuń", "Delete", "Measure", new { @item.Measure_id }, null)</td>
                 </tr>
             </tbody>
         }

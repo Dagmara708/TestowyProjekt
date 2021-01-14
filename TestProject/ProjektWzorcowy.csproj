@@ -271,6 +271,10 @@
     <Content Include="Views\Doctor\Edit.cshtml" />
     <Content Include="Views\Measure\Index.cshtml" />
     <Content Include="Views\FeverCard\Index.cshtml" />
+    <Content Include="Views\FeverCard\Add.cshtml" />
+    <Content Include="Views\FeverCard\Edit.cshtml" />
+    <Content Include="Views\Measure\Add.cshtml" />
+    <Content Include="Views\Measure\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,6 +3,8 @@
 
 <h2>Lista kart gorączkowych</h2>
 
+<p> @Html.ActionLink("Dodaj kartę", "Add", "FeverCard")</p>
+
 <style>
     td, th {
         border: 1px solid black;
@@ -12,15 +14,25 @@
 <div>
     <table WIDTH=100%>
         <tr>
-            <td align="center" style="font-weight: bold">Patient_ID</td>
+            <td align="center" style="font-weight: bold">Id lekarza</td>
+            <td align="center" style="font-weight: bold">Id pacjenta</td>
+            <td align="center" style="font-weight: bold">Wiek pacjenta</td>
+            <td align="center" style="font-weight: bold">Waga pacjenta</td>
             <td align="center" style="font-weight: bold">Szpital</td>
+            <td></td>
+            <td></td>
         </tr>
         @foreach (var item in Model)
         {
             <tbody>
                 <tr>
+                    <td align="center">@item.Doctor_id</td>
                     <td align="center">@item.Patient_id</td>
+                    <td align="center">@item.Patient_age</td>
+                    <td align="center">@item.Weight</td>
                     <td align="center">@item.Hospital</td>
+                    <td align="center">@Html.ActionLink("Edytuj kartę", "Edit", "FeverCard", new { @item.Card_id }, null)</td>
+                    <td align="center">@Html.ActionLink("Usuń", "Delete", "FeverCard", new { @item.Card_id }, null)</td>
                 </tr>
             </tbody>
         }
