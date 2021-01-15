@@ -3,28 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TestProject.Models;
 
 namespace TestProject.Controllers
 {
     public class HomeController : Controller
     {
+        private Context db;
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult AddPatient()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult AddPatient(Patient model)
         {
-            ViewBag.Message = "Your contact page.";
+            db.Patients.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
+        public ActionResult AddCard()
+        {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddCard(FeverCard model)
+        {
+            db.FeverCards.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult AddMeasure()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddMeasure(Measure model)
+        {
+            db.Measures.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

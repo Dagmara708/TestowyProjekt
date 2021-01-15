@@ -8,5 +8,10 @@
     <p class="lead">Pierwsze próby HTML</p>
 </div>
 
-<span>Pytaie co można wstawić na stronie głównej???</span>
-<p>Pierwsze próby HTML</p>
+<p> @Html.ActionLink("Dodaj pacjenta", "AddPatient", "Patient", new { @class = "btn btn-primary" })</p>
+
+
+<p> @Html.ActionLink("Dodaj kartę", "AddCard", "FeverCard", new { @class = "btn btn-primary" })</p>
+
+
+<p> @Html.ActionLink("Dodaj omia", "AddMeasure", "Measure", new { @class = "btn btn-primary" })</p>

@@ -29,6 +29,7 @@
                 <td align="center" style="font-weight: bold">PESEL</td>
                 <td></td>
                 <td></td>
+                <td></td>
             </tr>
             @foreach (var item in Model)
             {
@@ -40,6 +41,7 @@
                         <td align="center">@item.PESEL</td>
                         <td align="center">@Html.ActionLink("Edytuj pacjenta", "Edit", "Patient", new { @item.Patient_id }, null)</td>
                         <td align="center">@Html.ActionLink("Usuń", "Delete", "Patient", new { @item.Patient_id }, null)</td>
+                        <td align="center">@Html.ActionLink("Dodaj kartę", "AddCard", "Patient", new { @item.Patient_id }, null)</td>
                     </tr>
                 </tbody>
             }

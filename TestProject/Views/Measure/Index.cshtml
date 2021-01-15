@@ -14,7 +14,8 @@
 <div>
     <table WIDTH=100%>
         <tr>
-            <td align="center" style="font-weight: bold">Id karty</td>
+            <td align="center" style="font-weight: bold">Pacjent</td>
+            <td align="center" style="font-weight: bold">Lekarz</td>
             <td align="center" style="font-weight: bold">Dzień pobytu</td>
             <td align="center" style="font-weight: bold">Pora dnia</td>
             <td align="center" style="font-weight: bold">Temperatura</td>
@@ -30,7 +31,8 @@
         {
             <tbody>
                 <tr>
-                    <td align="center">@item.Card_id</td>
+                    <td align="center">@item.FeverCard.Patient.Name @item.FeverCard.Patient.Surname</td>
+                    <td align="center">@item.FeverCard.Doctor.Doctor_name @item.FeverCard.Doctor.Doctor_surname</td>
                     <td align="center">@item.Day_of_stay</td>
                     <td align="center">@item.Time_of_day</td>
                     <td align="center">@item.Temperature</td>

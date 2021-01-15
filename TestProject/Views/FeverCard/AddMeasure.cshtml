@@ -1,0 +1,45 @@
+﻿@model TestProject.Models.Measure
+@{
+    ViewBag.Title = "AddMeasure";
+}
+
+<h2>AddMeasure</h2>
+
+
+<form method="post">
+    <div>
+        <p>@Html.LabelFor(m => m.Day_of_stay)</p>
+        <p>@Html.TextBoxFor(m => m.Day_of_stay)</p>
+
+
+        <p>@Html.LabelFor(m => m.Time_of_day)</p>
+        <p>@Html.TextBoxFor(m => m.Time_of_day)</p>
+
+
+        <p>@Html.LabelFor(m => m.Temperature)</p>
+        <p>@Html.TextBoxFor(m => m.Temperature)</p>
+
+
+        <p>@Html.LabelFor(m => m.Pulse)</p>
+        <p>@Html.TextBoxFor(m => m.Pulse)</p>
+
+
+        <p>@Html.LabelFor(m => m.Stool)</p>
+        <p>@Html.TextBoxFor(m => m.Stool)</p>
+
+
+        <p>@Html.LabelFor(m => m.Diet)</p>
+        <p>@Html.TextBoxFor(m => m.Diet)</p>
+
+
+        <p>@Html.LabelFor(m => m.Doctors_rec)</p>
+        <p>@Html.TextBoxFor(m => m.Doctors_rec)</p>
+
+        <p>@Html.LabelFor(m => m.Others)</p>
+        <p>@Html.TextBoxFor(m => m.Others)</p>
+
+        @Html.HiddenFor(m => m.Card_id)
+
+        <input type="submit" value="Zapisz" />
+    </div>
+</form>

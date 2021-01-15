@@ -27,16 +27,16 @@ namespace TestProject.Models
         [DisplayName("Tętno")]
         public int Pulse { get; set; }
 
-        [DisplayName("Stolec")]
-        public string Stool { get; set; }
-
         [DisplayName("Dieta")]
         public string Diet { get; set; }
+
+        [DisplayName("Stolec")]
+        public string Stool { get; set; }
 
         [DisplayName("Zalecenia lekarskie")]
         public string Doctors_rec { get; set; }
 
-        [DisplayName("Kainnerta")]
+        [DisplayName("Inne")]
         public string Others { get; set; }
 
         public virtual FeverCard FeverCard { get; set; }

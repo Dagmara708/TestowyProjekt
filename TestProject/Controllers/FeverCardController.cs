@@ -20,6 +20,14 @@ namespace TestProject.Controllers
         public ActionResult Index()
         {
             List<FeverCard> model = db.FeverCards.ToList();
+            foreach (var item in model)
+            {
+                Patient pat = db.Patients.Single(x => x.Patient_id == item.Patient_id);
+                item.Patient = pat;
+
+                Doctor doc = db.Doctors.Single(x => x.Doctor_id == item.Doctor_id);
+                item.Doctor = doc;
+            }
             return View(model);
         }
         public ActionResult Add()
@@ -49,6 +57,7 @@ namespace TestProject.Controllers
 
             return View(model);
         }
+
         [HttpPost]
         public ActionResult Edit(FeverCard model)
         {
@@ -64,6 +73,20 @@ namespace TestProject.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult AddMeasure(int Card_id)
+        {
+            Measure model = new Measure();
+            model.Card_id = Card_id;
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddMeasure(Measure model)
+        {
+            db.Measures.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 
 

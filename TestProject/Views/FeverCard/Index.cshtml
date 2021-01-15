@@ -14,11 +14,12 @@
 <div>
     <table WIDTH=100%>
         <tr>
-            <td align="center" style="font-weight: bold">Id lekarza</td>
-            <td align="center" style="font-weight: bold">Id pacjenta</td>
+            <td align="center" style="font-weight: bold">Lekarz</td>
+            <td align="center" style="font-weight: bold">Pacjent</td>
             <td align="center" style="font-weight: bold">Wiek pacjenta</td>
             <td align="center" style="font-weight: bold">Waga pacjenta</td>
             <td align="center" style="font-weight: bold">Szpital</td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
@@ -26,13 +27,14 @@
         {
             <tbody>
                 <tr>
-                    <td align="center">@item.Doctor_id</td>
-                    <td align="center">@item.Patient_id</td>
+                    <td align="center">@item.Doctor.Doctor_name @item.Doctor.Doctor_surname</td>
+                    <td align="center">@item.Patient.Name @item.Patient.Surname</td>
                     <td align="center">@item.Patient_age</td>
                     <td align="center">@item.Weight</td>
                     <td align="center">@item.Hospital</td>
                     <td align="center">@Html.ActionLink("Edytuj kartę", "Edit", "FeverCard", new { @item.Card_id }, null)</td>
                     <td align="center">@Html.ActionLink("Usuń", "Delete", "FeverCard", new { @item.Card_id }, null)</td>
+                    <td align="center">@Html.ActionLink("Dodaj pomiar", "AddMeasure", "FeverCard", new { @item.Card_id }, null)</td>
                 </tr>
             </tbody>
         }

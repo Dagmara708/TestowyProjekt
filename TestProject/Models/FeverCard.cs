@@ -12,17 +12,14 @@ namespace TestProject.Models
         [Key]
         public int Card_id { get; set; }
 
-        [DisplayName("Id lekarza")]
-        public int Doctor_id { get; set; }
-
-
         [DisplayName("Id pacjenta")]
         public int Patient_id { get; set; }
 
+        [DisplayName("Id lekarza")]
+        public int Doctor_id { get; set; }
 
         [DisplayName("Wiek pacjenta")]
         public int Patient_age { get; set; }
-
 
         [DisplayName("Waga pacjenta")]
         public int Weight { get; set; }

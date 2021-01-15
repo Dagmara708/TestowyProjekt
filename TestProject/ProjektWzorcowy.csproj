@@ -237,8 +237,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -275,6 +273,11 @@
     <Content Include="Views\FeverCard\Edit.cshtml" />
     <Content Include="Views\Measure\Add.cshtml" />
     <Content Include="Views\Measure\Edit.cshtml" />
+    <Content Include="Views\Home\AddPatient.cshtml" />
+    <Content Include="Views\Home\AddCard.cshtml" />
+    <Content Include="Views\Home\AddMeasure.cshtml" />
+    <Content Include="Views\FeverCard\AddMeasure.cshtml" />
+    <Content Include="Views\Patient\AddCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
