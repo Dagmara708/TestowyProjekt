@@ -20,26 +20,33 @@ namespace TestProject.Controllers
         public ActionResult Index()
         {
             List<Measure> model = db.Measures.ToList();
-            foreach (var item in model)
-            {
-                FeverCard card = db.FeverCards.Single(x => x.Card_id == item.Card_id);
+            //foreach (var item in model)
+            //{
+            //    FeverCard card = db.FeverCards.Single(x => x.Card_id == item.Card_id);
 
-                Patient pat = db.Patients.Single(x => x.Patient_id == card.Patient_id);
-                card.Patient = pat;
+            //    Patient pat = db.Patients.Single(x => x.Patient_id == card.Patient_id);
+            //    card.Patient = pat;
 
-                Doctor doc = db.Doctors.Single(x => x.Doctor_id == card.Doctor_id);
-                card.Doctor = doc;
+            //    Doctor doc = db.Doctors.Single(x => x.Doctor_id == card.Doctor_id);
+            //    card.Doctor = doc;
 
-                item.FeverCard = card;
+            //    item.FeverCard = card;
 
-            }
+            //}
             return View(model);
         }
 
-        public ActionResult Add()
+        public ActionResult Add(int? Card_id)
         {
-            return View();
+            if (Card_id.HasValue)
+            {
+                Measure model = new Measure() { Card_id = Card_id.Value };
+                return View(model);
+            }
+
+            return View("AddNoCard");
         }
+
         [HttpPost]
         public ActionResult Add(Measure model)
         {
@@ -80,6 +87,13 @@ namespace TestProject.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+       
+        public ActionResult GetMeasuresByFeverCardId(int Card_id)
+        {
+            List<Measure> model = db.Measures.Where(x => x.FeverCard.Card_id == Card_id).ToList();
+
+            return View("Index", model);
         }
 
     }

@@ -16,20 +16,13 @@ namespace TestProject.Controllers
             db = new Context();
         }
 
-
         public ActionResult Index()
         {
             List<FeverCard> model = db.FeverCards.ToList();
-            foreach (var item in model)
-            {
-                Patient pat = db.Patients.Single(x => x.Patient_id == item.Patient_id);
-                item.Patient = pat;
-
-                Doctor doc = db.Doctors.Single(x => x.Doctor_id == item.Doctor_id);
-                item.Doctor = doc;
-            }
             return View(model);
+           
         }
+
         public ActionResult Add()
         {
             return View();
@@ -73,20 +66,23 @@ namespace TestProject.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult AddMeasure(int Card_id)
+        [HttpPost]
+        public ActionResult Search(string pattern)
         {
-            Measure model = new Measure();
-            model.Card_id = Card_id;
-            return View(model);
+            if (string.IsNullOrEmpty(pattern) || string.IsNullOrWhiteSpace(pattern))
+            {
+                return RedirectToAction("Index");
+            }
+
+            List<FeverCard> model = db.FeverCards.Where(x => x.Patient.Name.ToLower().Contains(pattern.ToLower()) ||
+                x.Patient.Surname.ToLower().Contains(pattern.ToLower()) ||
+                x.Patient.PESEL.ToLower().Contains(pattern.ToLower()))
+                .ToList();
+
+
+            return View("Index", model);
         }
 
-        [HttpPost]
-        public ActionResult AddMeasure(Measure model)
-        {
-            db.Measures.Add(model);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
     }
 
 

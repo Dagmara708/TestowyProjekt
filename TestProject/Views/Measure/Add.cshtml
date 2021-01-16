@@ -4,8 +4,7 @@
 
 <form method="post">
     <div>
-        <p>@Html.LabelFor(m => m.Card_id)</p>
-        <p>@Html.TextBoxFor(m => m.Card_id)</p>
+        @Html.HiddenFor(m => m.Card_id)
 
         <p>@Html.LabelFor(m => m.Day_of_stay)</p>
         <p>@Html.TextBoxFor(m => m.Day_of_stay)</p>

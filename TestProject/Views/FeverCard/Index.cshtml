@@ -2,6 +2,17 @@
 
 
 <h2>Lista kart gorączkowych</h2>
+<form method="post" action="~/FeverCard/Search">
+    <div>
+        <div class="form-inline">
+            @Html.TextBox("pattern", null, new { @class = "form-control", @placeholder = "Wyszukaj kartę gorączkową pacjenta ..." })
+            <input type="submit" value="Wyszukaj" class="btn btn-secondary">
+        </div>
+    </div>
+</form>
+<br />
+
+
 
 <p> @Html.ActionLink("Dodaj kartę", "Add", "FeverCard")</p>
 
@@ -22,6 +33,7 @@
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         @foreach (var item in Model)
         {
@@ -34,7 +46,8 @@
                     <td align="center">@item.Hospital</td>
                     <td align="center">@Html.ActionLink("Edytuj kartę", "Edit", "FeverCard", new { @item.Card_id }, null)</td>
                     <td align="center">@Html.ActionLink("Usuń", "Delete", "FeverCard", new { @item.Card_id }, null)</td>
-                    <td align="center">@Html.ActionLink("Dodaj pomiar", "AddMeasure", "FeverCard", new { @item.Card_id }, null)</td>
+                    <td align="center">@Html.ActionLink("Dodaj pomiar", "Add", "Measure", new { @item.Card_id }, null)</td>
+                    <td align="center">@Html.ActionLink("Wyświetl pomiary", "GetMeasuresByFeverCardId", "Measure", new { @item.Card_id }, null)</td>
                 </tr>
             </tbody>
         }

@@ -78,20 +78,20 @@ namespace TestProject.Controllers
 
             return RedirectToAction("Index");
         }
-        public ActionResult AddCard(int Patient_id)
-        {
-            FeverCard model = new FeverCard();
-            model.Patient_id = Patient_id;
-            return View(model);
-        }
+        //public ActionResult AddCard(int Patient_id)
+        //{
+        //    FeverCard model = new FeverCard();
+        //    model.Patient_id = Patient_id;
+        //    return View(model);
+        //}
 
-        [HttpPost]
-        public ActionResult AddCard(FeverCard model)
-        {
-            db.FeverCards.Add(model);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost]
+        //public ActionResult AddCard(FeverCard model)
+        //{
+        //    db.FeverCards.Add(model);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
     }
 
