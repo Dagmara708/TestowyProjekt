@@ -17,9 +17,10 @@ namespace TestProject.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        private Context _context;
         public AccountController()
         {
+            _context = new Context();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -152,6 +153,14 @@ namespace TestProject.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                Doctor doctorModel = new Doctor()
+                {
+                    Doctor_name = model.Name,
+                    Doctor_surname = model.Surname,
+                    Doctor_PESEL = model.PESEL
+                };
+                _context.Doctors.Add(doctorModel);
+                _context.SaveChanges();
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
