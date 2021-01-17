@@ -7,6 +7,7 @@ using TestProject.Models;
 
 namespace TestProject.Controllers
 {
+    [Authorize]
     public class DoctorController : Controller
     {
         private Context db;

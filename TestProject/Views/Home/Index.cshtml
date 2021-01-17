@@ -7,11 +7,13 @@
     <h1>FCard</h1>
     <p class="lead">Pierwsze próby HTML</p>
 </div>
-
-<p> @Html.ActionLink("Dodaj pacjenta", "Add", "Patient", null, new { @class = "btn btn-primary" })</p>
-
-
-<p> @Html.ActionLink("Dodaj kartę", "Add", "FeverCard", null, new { @class = "btn btn-primary" })</p>
+@if (User.Identity.IsAuthenticated)
+{
+    <p> @Html.ActionLink("Dodaj pacjenta", "Add", "Patient", null, new { @class = "btn btn-primary" })</p>
 
 
-<p> @Html.ActionLink("Dodaj pomiar", "Add", "Measure", null, new { @class = "btn btn-primary" })</p>
+    <p> @Html.ActionLink("Dodaj kartę", "Add", "FeverCard", null, new { @class = "btn btn-primary" })</p>
+
+
+    <p> @Html.ActionLink("Dodaj pomiar", "Add", "Measure", null, new { @class = "btn btn-primary" })</p>
+}

@@ -59,7 +59,7 @@ namespace TestProject.Models
         [Display(Name = "Hasło")]
         public string Password { get; set; }
 
-        [Display(Name = "Zapamiętać Cię?")]
+        [Display(Name = "Zapamiętaj hasło")]
         public bool RememberMe { get; set; }
     }
 

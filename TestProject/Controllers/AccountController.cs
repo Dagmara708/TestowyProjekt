@@ -152,18 +152,18 @@ namespace TestProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                Doctor doctorModel = new Doctor()
-                {
-                    Doctor_name = model.Name,
-                    Doctor_surname = model.Surname,
-                    Doctor_PESEL = model.PESEL
-                };
-                _context.Doctors.Add(doctorModel);
-                _context.SaveChanges();
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };       
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    Doctor doctorModel = new Doctor()
+                    {
+                        Doctor_name = model.Name,
+                        Doctor_surname = model.Surname,
+                        Doctor_PESEL = model.PESEL
+                    };
+                    _context.Doctors.Add(doctorModel);
+                    _context.SaveChanges();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // Aby uzyskać więcej informacji o sposobie włączania potwierdzania konta i resetowaniu hasła, odwiedź stronę https://go.microsoft.com/fwlink/?LinkID=320771
