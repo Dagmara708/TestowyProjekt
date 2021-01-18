@@ -274,6 +274,7 @@
     <Content Include="Views\Measure\Add.cshtml" />
     <Content Include="Views\Measure\Edit.cshtml" />
     <Content Include="Views\Measure\AddNoCard.cshtml" />
+    <Content Include="Views\FeverCard\AddNoPatient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

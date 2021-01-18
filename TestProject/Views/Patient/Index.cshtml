@@ -48,3 +48,13 @@
         </table>
 
     </div>
+
+<h5> Proba comboBoxa </h5>
+    <div>
+        <select name="choice">
+            @foreach (var item in Model)
+            {
+            <option value="@item.Patient_id">@item.Name @item.Surname</option>
+            }
+        </select>
+    </div>

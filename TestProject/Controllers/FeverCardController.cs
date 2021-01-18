@@ -24,9 +24,14 @@ namespace TestProject.Controllers
            
         }
 
-        public ActionResult Add()
+        public ActionResult Add(int? Patient_id)
         {
-            return View();
+            if (Patient_id.HasValue)
+            {
+                FeverCard model = new FeverCard() { Patient_id = Patient_id.Value };
+                return View(model);
+            }
+            return View("AddNoPatient");
         }
 
         [HttpPost]
