@@ -57,7 +57,13 @@ namespace TestProject.Controllers
 
         public ActionResult Edit(int Card_id)
         {
+            List<Doctor> doctorsModel = db.Doctors.ToList();
+            List<Patient> patientsModel = db.Patients.ToList();
+
             FeverCard model = db.FeverCards.Where(x => x.Card_id == Card_id).FirstOrDefault();
+
+            ViewBag.Patients = patientsModel;
+            ViewBag.Doctors = doctorsModel;
 
             return View(model);
         }

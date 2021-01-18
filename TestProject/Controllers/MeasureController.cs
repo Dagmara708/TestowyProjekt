@@ -44,7 +44,8 @@ namespace TestProject.Controllers
                 Measure model = new Measure() { Card_id = Card_id.Value };
                 return View(model);
             }
-
+            List<FeverCard> FeverCardModel = db.FeverCards.ToList();
+            ViewBag.FeverCardModel = FeverCardModel;
             return View("AddNoCard");
         }
 
@@ -68,6 +69,9 @@ namespace TestProject.Controllers
         public ActionResult Edit(int Measure_id)
         {
             Measure model = db.Measures.Where(x => x.Measure_id == Measure_id).FirstOrDefault();
+
+            List<FeverCard> FeverCardModel = db.FeverCards.ToList();
+            ViewBag.FeverCardModel = FeverCardModel;
 
             return View(model);
         }
