@@ -5,7 +5,7 @@
 <form method="post">
     <div>
         <p>@Html.LabelFor(m => m.Doctor_id)</p>
-        <p>@Html.TextBoxFor(m => m.Doctor_id)</p>
+        <p>@Html.DropDownListFor(m => m.Doctor_id, new SelectList(ViewBag.Doctors, "Doctor_id", "Doctor_surname") )</p>
 
         @Html.HiddenFor(m => m.Patient_id)
 

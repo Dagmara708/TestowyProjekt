@@ -26,11 +26,16 @@ namespace TestProject.Controllers
 
         public ActionResult Add(int? Patient_id)
         {
+            List<Doctor> doctorsModel = db.Doctors.ToList();
             if (Patient_id.HasValue)
             {
                 FeverCard model = new FeverCard() { Patient_id = Patient_id.Value };
+                ViewBag.Doctors = doctorsModel;
                 return View(model);
             }
+            List<Patient> patientsModel = db.Patients.ToList();
+            ViewBag.Patients = patientsModel;
+            ViewBag.Doctors = doctorsModel;
             return View("AddNoPatient");
         }
 
