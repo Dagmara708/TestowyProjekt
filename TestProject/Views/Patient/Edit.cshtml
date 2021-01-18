@@ -8,14 +8,14 @@
 <form method="post">
     <div>
         <p>@Html.LabelFor(m => m.Name)</p>
-        <p>@Html.TextBoxFor(m => m.Name)</p>
+        <p>@Html.TextBoxFor(m => m.Name, new { @class = "form-control" })</p>
         
 
         <p>@Html.LabelFor(m => m.Surname)</p>
-        <p>@Html.TextBoxFor(m => m.Surname)</p>
+        <p>@Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })</p>
 
         <p>@Html.LabelFor(m => m.PESEL)</p>
-        <p>@Html.TextBoxFor(m => m.PESEL)</p>
+        <p>@Html.TextBoxFor(m => m.PESEL, new { @class = "form-control" })</p>
 
         @Html.HiddenFor(m => m.Patient_id)
 

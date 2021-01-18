@@ -3,17 +3,24 @@
 }
 
 <div class="jumbotron">
-    <h3>SUPER APKA</h3>
+    <h3>Aplikacja Natalii Kozak i Dagmary Mazur</h3>
     <h1>FCard</h1>
-    <p class="lead">Pierwsze próby HTML</p>
 </div>
 @if (User.Identity.IsAuthenticated)
 {
-    <p> @Html.ActionLink("Dodaj pacjenta", "Add", "Patient", null, new { @class = "btn btn-primary" })</p>
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4">
+        <p> @Html.ActionLink("Dodaj pacjenta", "Add", "Patient", null, new { @class = "btn btn-primary center-block" })</p>
 
 
-    <p> @Html.ActionLink("Dodaj kartę", "Add", "FeverCard", null, new { @class = "btn btn-primary" })</p>
+        <p> @Html.ActionLink("Dodaj kartę", "Add", "FeverCard", null, new { @class = "btn btn-primary center-block" })</p>
 
 
-    <p> @Html.ActionLink("Dodaj pomiar", "Add", "Measure", null, new { @class = "btn btn-primary" })</p>
+        <p> @Html.ActionLink("Dodaj pomiar", "Add", "Measure", null, new { @class = "btn btn-primary center-block" })</p>
+    </div>
+    <div class="col-lg-4">
+    </div>
 }
+<div class="col-lg-12">
+</div>

@@ -7,34 +7,34 @@
         @Html.HiddenFor(m => m.Card_id)
 
         <p>@Html.LabelFor(m => m.Day_of_stay)</p>
-        <p>@Html.TextBoxFor(m => m.Day_of_stay)</p>
+        <p>@Html.TextBoxFor(m => m.Day_of_stay, new { @class = "form-control" })</p>
 
 
         <p>@Html.LabelFor(m => m.Time_of_day)</p>
-        <p>@Html.TextBoxFor(m => m.Time_of_day)</p>
+        <p>@Html.TextBoxFor(m => m.Time_of_day, new { @class = "form-control" })</p>
 
 
         <p>@Html.LabelFor(m => m.Temperature)</p>
-        <p>@Html.TextBoxFor(m => m.Temperature)</p>
+        <p>@Html.TextBoxFor(m => m.Temperature, new { @class = "form-control" })</p>
 
 
         <p>@Html.LabelFor(m => m.Pulse)</p>
-        <p>@Html.TextBoxFor(m => m.Pulse)</p>
+        <p>@Html.TextBoxFor(m => m.Pulse, new { @class = "form-control" })</p>
 
 
         <p>@Html.LabelFor(m => m.Stool)</p>
-        <p>@Html.TextBoxFor(m => m.Stool)</p>
+        <p>@Html.TextBoxFor(m => m.Stool, new { @class = "form-control" })</p>
 
 
         <p>@Html.LabelFor(m => m.Diet)</p>
-        <p>@Html.TextBoxFor(m => m.Diet)</p>
+        <p>@Html.TextBoxFor(m => m.Diet, new { @class = "form-control" })</p>
 
 
         <p>@Html.LabelFor(m => m.Doctors_rec)</p>
-        <p>@Html.TextBoxFor(m => m.Doctors_rec)</p>
+        <p>@Html.TextBoxFor(m => m.Doctors_rec, new { @class = "form-control" })</p>
 
         <p>@Html.LabelFor(m => m.Others)</p>
-        <p>@Html.TextBoxFor(m => m.Others)</p>
+        <p>@Html.TextBoxFor(m => m.Others, new { @class = "form-control" })</p>
 
         <input type="submit" value="Zapisz" />
     </div>

@@ -8,13 +8,13 @@
 <form method="post">
     <div>
         <p>@Html.LabelFor(m => m.Doctor_name)</p>
-        <p>@Html.TextBoxFor(m => m.Doctor_name)</p>
+        <p>@Html.TextBoxFor(m => m.Doctor_name, new { @class = "form-control" })</p>
 
         <p>@Html.LabelFor(m => m.Doctor_surname)</p>
-        <p>@Html.TextBoxFor(m => m.Doctor_surname)</p>
+        <p>@Html.TextBoxFor(m => m.Doctor_surname, new { @class = "form-control" })</p>
 
         <p>@Html.LabelFor(m => m.Doctor_PESEL)</p>
-        <p>@Html.TextBoxFor(m => m.Doctor_PESEL)</p>
+        <p>@Html.TextBoxFor(m => m.Doctor_PESEL, new { @class = "form-control" })</p>
 
         <input type="submit" value="Zapisz" />
     </div>
