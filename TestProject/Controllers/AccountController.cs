@@ -160,7 +160,8 @@ namespace TestProject.Controllers
                     {
                         Doctor_name = model.Name,
                         Doctor_surname = model.Surname,
-                        Doctor_PESEL = model.PESEL
+                        Doctor_PESEL = model.PESEL,
+                        User_id = user.Id
                     };
                     _context.Doctors.Add(doctorModel);
                     _context.SaveChanges();

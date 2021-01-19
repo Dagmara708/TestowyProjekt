@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TestProject.Models;
+using Microsoft.AspNet.Identity;
 
 namespace TestProject.Controllers
 {
@@ -29,19 +30,29 @@ namespace TestProject.Controllers
             List<Doctor> doctorsModel = db.Doctors.ToList();
             if (Patient_id.HasValue)
             {
-                FeverCard model = new FeverCard() { Patient_id = Patient_id.Value };
-                ViewBag.Doctors = doctorsModel;
+                var uid = User.Identity.GetUserId();
+                Doctor doc = db.Doctors.Single(x => x.User_id == uid);
+
+                FeverCard model = new FeverCard() 
+                { 
+                    Patient_id = Patient_id.Value,
+                    Doctor_id = doc.Doctor_id
+                };
+               // /ViewBag.Doctors = doctorsModel;
                 return View(model);
             }
             List<Patient> patientsModel = db.Patients.ToList();
             ViewBag.Patients = patientsModel;
-            ViewBag.Doctors = doctorsModel;
+           //  ViewBag.Doctors = doctorsModel;
             return View("AddNoPatient");
         }
 
         [HttpPost]
         public ActionResult Add(FeverCard model)
         {
+            var uid = User.Identity.GetUserId();
+            Doctor doc = db.Doctors.Single(x => x.User_id == uid);
+            model.Doctor_id = doc.Doctor_id;
             db.FeverCards.Add(model);
             db.SaveChanges();
             return RedirectToAction("Index");

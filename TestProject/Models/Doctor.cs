@@ -21,6 +21,8 @@ namespace TestProject.Models
         [DisplayName("PESEL lekarza")]
         public string Doctor_PESEL { get; set; }
 
+        public string User_id { get; set; }
+
         public virtual List<FeverCard> FeverCards { get; set; }
     }
 }
