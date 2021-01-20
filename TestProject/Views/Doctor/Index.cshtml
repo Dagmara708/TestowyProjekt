@@ -11,7 +11,6 @@
     </div>
 </form>
 <br />
-<p> @Html.ActionLink("Dodaj lekarza", "Add", "Doctor", new { @class = "btn btn-primary"})</p>
 
 <style>
     td, th {
@@ -40,7 +39,6 @@
                     <td align="center">@item.Doctor_surname</td>
                     <td align="center">@item.Doctor_PESEL</td>
                     <td align="center">@Html.ActionLink("Edytuj lekarza", "Edit", "Doctor", new { @item.Doctor_id }, null)</td>
-                    <td align="center">@Html.ActionLink("Usuń", "Delete", "Doctor", new { @item.Doctor_id }, null)</td>
                 </tr>
             </tbody>
         }

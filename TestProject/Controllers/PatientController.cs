@@ -77,6 +77,9 @@ namespace TestProject.Controllers
             db.Patients.Remove(old);
             db.SaveChanges();
 
+            DeleteHelper.DeleteFeverCard(Patient_id);
+            DeleteHelper.SaveChanges();
+
             return RedirectToAction("Index");
         }
         //public ActionResult AddCard(int Patient_id)

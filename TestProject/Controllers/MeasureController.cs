@@ -63,6 +63,9 @@ namespace TestProject.Controllers
             db.Measures.Remove(old);
             db.SaveChanges();
 
+            DeleteHelper.DeleteFeverCard(Measure_id);
+            DeleteHelper.SaveChanges();
+
             return RedirectToAction("Index");
         }
 

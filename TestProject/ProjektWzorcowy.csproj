@@ -182,6 +182,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DeleteHelper.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\FeverCardController.cs" />

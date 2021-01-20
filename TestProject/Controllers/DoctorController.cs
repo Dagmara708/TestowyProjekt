@@ -37,17 +37,7 @@ namespace TestProject.Controllers
 
             return View("Index", model);
         }
-        public ActionResult Add()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Add(Doctor model)
-        {
-            db.Doctors.Add(model);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+       
         public ActionResult Edit(int Doctor_id)
         {
             Doctor model = db.Doctors.Where(x => x.Doctor_id == Doctor_id).FirstOrDefault();
@@ -65,14 +55,7 @@ namespace TestProject.Controllers
 
             return RedirectToAction("Index");
         }
-        public ActionResult Delete(int Doctor_id)
-        {
-            Doctor old = db.Doctors.Single(x => x.Doctor_id == Doctor_id);
-            db.Doctors.Remove(old);
-            db.SaveChanges();
 
-            return RedirectToAction("Index");
-        }
 
     }
 }
