@@ -22,7 +22,7 @@ namespace TestProject.Models
         public string Time_of_day { get; set; }
 
         [DisplayName("Temperatura")]
-        public int Temperature { get; set; }
+        public string Temperature { get; set; }
 
         [DisplayName("Tętno")]
         public int Pulse { get; set; }

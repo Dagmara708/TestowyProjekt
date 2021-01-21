@@ -201,7 +201,6 @@
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Measure.cs" />
-    <Compile Include="Models\Subexample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
