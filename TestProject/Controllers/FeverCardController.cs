@@ -59,9 +59,7 @@ namespace TestProject.Controllers
         }
         public ActionResult Delete(int Card_id)
         {
-            //FeverCard old = db.FeverCards.Single(x => x.Card_id == Card_id);
-            //db.FeverCards.Remove(old);
-            //db.SaveChanges();
+           
 
             DeleteHelper.DeleteFeverCard(Card_id);
             DeleteHelper.SaveChanges();

@@ -59,11 +59,9 @@ namespace TestProject.Controllers
 
         public ActionResult Delete(int Measure_id)
         {
-            Measure old = db.Measures.Single(x => x.Measure_id == Measure_id);
-            db.Measures.Remove(old);
-            db.SaveChanges();
+           
 
-            DeleteHelper.DeleteFeverCard(Measure_id);
+            DeleteHelper.DeleteMeasure(Measure_id);
             DeleteHelper.SaveChanges();
 
             return RedirectToAction("Index");

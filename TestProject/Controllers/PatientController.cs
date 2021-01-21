@@ -73,11 +73,9 @@ namespace TestProject.Controllers
 
         public ActionResult Delete(int Patient_id)
         {
-            Patient old = db.Patients.Single(x => x.Patient_id == Patient_id);
-            db.Patients.Remove(old);
-            db.SaveChanges();
+           
 
-            DeleteHelper.DeleteFeverCard(Patient_id);
+            DeleteHelper.DeletePatient(Patient_id);
             DeleteHelper.SaveChanges();
 
             return RedirectToAction("Index");
