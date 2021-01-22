@@ -3,16 +3,14 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edytuj kartę gorączkową</h2>
 
 
 <form method="post">
     <div>
-        <p>@Html.LabelFor(m => m.Doctor_id)</p>
-        <p>@Html.DropDownListFor(m => m.Doctor_id, new SelectList(ViewBag.Doctors, "Doctor_id", "Doctor_surname"), new { @class = "form-control" })</p>
 
         <p>@Html.LabelFor(m => m.Patient_id)</p>
-        <p>@Html.DropDownListFor(m => m.Patient_id, new SelectList(ViewBag.Patients, "Patient_id", "Surname"), new { @class = "form-control" })</p>
+        <p>@Html.DropDownListFor(m => m.Patient_id, new SelectList(ViewBag.Patients, "Patient_id", "PESEL"), new { @class = "form-control" })</p>
 
         <p>@Html.LabelFor(m => m.Patient_age)</p>
         <p>@Html.TextBoxFor(m => m.Patient_age, new { @class = "form-control" })</p>
@@ -25,6 +23,7 @@
         <p>@Html.TextBoxFor(m => m.Hospital, new { @class = "form-control" })</p>
 
         @Html.HiddenFor(m => m.Card_id)
+        @Html.HiddenFor(m => m.Doctor_id)
 
         <input type="submit" value="Zapisz" />
     </div>
