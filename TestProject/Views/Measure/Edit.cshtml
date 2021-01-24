@@ -7,6 +7,7 @@
 
 <form method="post">
     <div>
+        <p style="color:red; white-space:pre-line;">@TempData["Error"]</p>
         <p>@Html.LabelFor(m => m.Card_id)</p>
         <p>@Html.DropDownListFor(m => m.Card_id, new SelectList(ViewBag.FeverCardModel, "Card_id", "Patient.Surname"), new { @class = "form-control" })</p>
 
@@ -42,6 +43,6 @@
 
         @Html.HiddenFor(m => m.Measure_id)
 
-        <input type="submit" value="Zapisz" />
+        <input type="submit" value="Zapisz" class="btn btn-primary "  />
     </div>
 </form>

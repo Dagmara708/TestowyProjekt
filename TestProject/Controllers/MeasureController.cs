@@ -40,6 +40,19 @@ namespace TestProject.Controllers
         [HttpPost]
         public ActionResult Add(Measure model)
         {
+            if (!ModelState.IsValid)
+            {
+                string error = "";
+                foreach (var modelState in ModelState.Values)
+                {
+                    foreach (var modelError in modelState.Errors)
+                    {
+                        error += modelError.ErrorMessage + "\n";
+                    }
+                }
+                TempData["Error"] = error;
+                return RedirectToAction("Add", new { @Card_id = model.Card_id });
+            }
             db.Measures.Add(model);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -57,6 +70,7 @@ namespace TestProject.Controllers
 
         public ActionResult Edit(int Measure_id)
         {
+            
             Measure model = db.Measures.Where(x => x.Measure_id == Measure_id).FirstOrDefault();
 
             List<FeverCard> FeverCardModel = db.FeverCards.ToList();
@@ -67,6 +81,19 @@ namespace TestProject.Controllers
         [HttpPost]
         public ActionResult Edit(Measure model)
         {
+            if (!ModelState.IsValid)
+            {
+                string error = "";
+                foreach (var modelstate in ModelState.Values)
+                {
+                    foreach (var modelerror in modelstate.Errors)
+                    {
+                        error += modelerror.ErrorMessage + "\n";
+                    }
+                }
+                TempData["error"] = error;
+                return RedirectToAction("edit ", new { @Card_id = model.Card_id });
+            }
             Measure old = db.Measures.Single(x => x.Measure_id == model.Measure_id);
             db.Entry(old).State = System.Data.Entity.EntityState.Modified;
             old.Card_id = model.Card_id;
@@ -78,6 +105,19 @@ namespace TestProject.Controllers
             old.Diet = model.Diet;
             old.Doctors_rec = model.Doctors_rec;
             old.Others = model.Others;
+            //if (!ModelState.IsValid)
+            //{
+            //    string error = "";
+            //    foreach (var modelState in ModelState.Values)
+            //    {
+            //        foreach (var modelError in modelState.Errors)
+            //        {
+            //            error += modelError.ErrorMessage + "\n";
+            //        }
+            //    }
+            //    TempData["Error"] = error;
+            //    return RedirectToAction("Edit");
+            //}
             db.SaveChanges();
 
             return RedirectToAction("Index");

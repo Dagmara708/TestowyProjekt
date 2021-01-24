@@ -5,18 +5,19 @@
 
 <form method="post">
     <div>
+        <p style="color:red">@TempData["Error"]</p>
         <p>@Html.LabelFor(m => m.Patient_id)</p>
-        <p>@Html.DropDownListFor(m => m.Patient_id, new SelectList(ViewBag.Patients, "Patient_id", "PESEL"), new { @class = "form-control"})</p>
+        <p>@Html.DropDownListFor(m => m.Patient_id, new SelectList(ViewBag.Patients, "Patient_id", "PESEL"), new { @class = "form-control" })</p>
 
         <p>@Html.LabelFor(m => m.Patient_age)</p>
-        <p>@Html.TextBoxFor(m => m.Patient_age, new { @class = "form-control"})</p>
+        <p>@Html.TextBoxFor(m => m.Patient_age, new { @class = "form-control" })</p>
 
 
         <p>@Html.LabelFor(m => m.Weight)</p>
-        <p>@Html.TextBoxFor(m => m.Weight, new { @class = "form-control"})</p>
+        <p>@Html.TextBoxFor(m => m.Weight, new { @class = "form-control" })</p>
 
         <p>@Html.LabelFor(m => m.Hospital)</p>
-        <p>@Html.TextBoxFor(m => m.Hospital, new { @class = "form-control"})</p>
+        <p>@Html.TextBoxFor(m => m.Hospital, new { @class = "form-control" })</p>
 
         <input type="submit" value="Zapisz" class="btn btn-primary" />
     </div>

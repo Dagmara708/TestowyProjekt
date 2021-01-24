@@ -6,6 +6,8 @@
 <h2>Dodaj pacjenta</h2>
 <form method="post">
     <div>
+        <p style="color:red; white-space:pre-line;">@TempData["Error"]</p>
+
         <p>@Html.LabelFor(m => m.Name)</p>
         <p>@Html.TextBoxFor(m => m.Name, new { @class = "form-control" })</p>
 
@@ -15,6 +17,6 @@
         <p>@Html.LabelFor(m => m.PESEL)</p>
         <p>@Html.TextBoxFor(m => m.PESEL, new { @class = "form-control" })</p>
 
-        <input type="submit" value="Zapisz" />
+        <input type="submit" value="Zapisz" class="btn btn-primary " />
     </div>
 </form>

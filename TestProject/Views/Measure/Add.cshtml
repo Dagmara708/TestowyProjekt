@@ -4,6 +4,7 @@
 
 <form method="post">
     <div>
+        <p style="color:red; white-space:pre-line;">@TempData["Error"]</p>
         @Html.HiddenFor(m => m.Card_id)
 
         <p>@Html.LabelFor(m => m.Day_of_stay)</p>
@@ -36,6 +37,6 @@
         <p>@Html.LabelFor(m => m.Others)</p>
         <p>@Html.TextBoxFor(m => m.Others, new { @class = "form-control" })</p>
 
-        <input type="submit" value="Zapisz" />
+        <input type="submit" value="Zapisz" class="btn btn-primary "  />
     </div>
 </form>

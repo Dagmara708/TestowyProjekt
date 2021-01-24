@@ -11,7 +11,7 @@ namespace TestProject.Controllers
     [Authorize]
     public class FeverCardController : Controller
     {
-        // GET: FeverCard
+        
         private Context db;
         public FeverCardController()
         {
@@ -38,12 +38,12 @@ namespace TestProject.Controllers
                     Patient_id = Patient_id.Value,
                     Doctor_id = doc.Doctor_id
                 };
-               // /ViewBag.Doctors = doctorsModel;
+            
                 return View(model);
             }
             List<Patient> patientsModel = db.Patients.ToList();
             ViewBag.Patients = patientsModel;
-           //  ViewBag.Doctors = doctorsModel;
+          
             return View("AddNoPatient");
         }
 
@@ -53,6 +53,7 @@ namespace TestProject.Controllers
             var uid = User.Identity.GetUserId();
             Doctor doc = db.Doctors.Single(x => x.User_id == uid);
             model.Doctor_id = doc.Doctor_id;
+           
             db.FeverCards.Add(model);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -81,6 +82,20 @@ namespace TestProject.Controllers
         [HttpPost]
         public ActionResult Edit(FeverCard model)
         {
+            if (!ModelState.IsValid)
+            {
+                string error = "";
+                foreach (var modelState in ModelState.Values)
+                {
+                    foreach (var modelError in modelState.Errors)
+                    {
+                        error += modelError.ErrorMessage + "\n";
+                    }
+                }
+                TempData["Error"] = error;
+                return RedirectToAction("Edit", new { @Card_id = model.Card_id });
+            }
+
             FeverCard old = db.FeverCards.Single(x => x.Card_id == model.Card_id);
             db.Entry(old).State = System.Data.Entity.EntityState.Modified;
             old.Doctor_id = model.Doctor_id;
@@ -88,6 +103,7 @@ namespace TestProject.Controllers
             old.Patient_age = model.Patient_age;
             old.Weight = model.Weight;
             old.Hospital = model.Hospital;
+            
             db.SaveChanges();
 
             return RedirectToAction("Index");

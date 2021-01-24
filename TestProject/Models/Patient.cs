@@ -19,6 +19,7 @@ namespace TestProject.Models
         public string Surname { get; set; }
 
         [DisplayName("PESEL")]
+        [PESELValidator(ErrorMessage = "PESEL nie jest poprawny")]
         public string PESEL { get; set; }
 
         public virtual List<FeverCard> FeverCards { get; set; }

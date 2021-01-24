@@ -47,6 +47,19 @@ namespace TestProject.Controllers
         [HttpPost]
         public ActionResult Edit(Doctor model)
         {
+            if (!ModelState.IsValid)
+            {
+                string error = "";
+                foreach (var modelState in ModelState.Values)
+                {
+                    foreach (var modelError in modelState.Errors)
+                    {
+                        error += modelError.ErrorMessage + "\n";
+                    }
+                }
+                TempData["Error"] = error;
+                return RedirectToAction("Edit", new { @Doctor_id = model.Doctor_id});
+            }
             Doctor old = db.Doctors.Single(x => x.Doctor_id == model.Doctor_id);
             db.Entry(old).State = System.Data.Entity.EntityState.Modified;
             old.Doctor_name = model.Doctor_name;
